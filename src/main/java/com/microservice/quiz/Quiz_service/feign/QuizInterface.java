@@ -16,6 +16,7 @@ import com.microservice.quiz.Quiz_service.Bean.ValidationResponse;
 
 @FeignClient("QUESTION-SERVICE")
 public interface QuizInterface {
+	///pull the url and id from question service
 	@GetMapping("question/createID")//quiz/create?category=Java&noOfQuestions=5&title=HelloWorld
 	public ResponseEntity<Iterable<Integer>> createQuestionsIDForQuiz(@RequestParam String category,@RequestParam Integer noOfQuestions);//,@RequestParam String title);
 	@PostMapping("question/createQuestions")
